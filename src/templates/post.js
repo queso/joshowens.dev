@@ -43,10 +43,6 @@ const PostStyle = styled.div`
     h2 {
       font-size: 1.4em;
       margin: 3rem 0 1.5rem 0;
-
-      @media (max-width: 815px) {
-        font-size: 1.2em;
-      }
     }
   }
 
