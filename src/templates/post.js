@@ -45,7 +45,7 @@ const PostStyle = styled.div`
       margin: 3rem 0 1.5rem 0;
 
       @media (max-width: 815px) {
-        font-size: 0.9em;
+        font-size: 1.2em;
       }
     }
   }
