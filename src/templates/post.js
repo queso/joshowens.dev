@@ -68,7 +68,6 @@ const HeaderStyle = styled.div`
   font-family: Roboto;
   color: white;
   position: relative;
-  min-height: 200px;
 
   .meta {
     &:before {
