@@ -114,6 +114,12 @@ const HeaderStyle = styled.div`
       font-size: 0.6em;
       padding: 1rem 0;
     }
+
+    @media (max-width: 355px) {
+      top: 5%;
+      font-size: 0.5em;
+      padding: 0.5rem 0;
+    }
   }
 
   img {
