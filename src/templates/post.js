@@ -116,7 +116,7 @@ const HeaderStyle = styled.div`
     @media (max-width: 815px) {
       top: 10%;
       font-size: 0.6em;
-      min-height: 220px;
+      padding: 1rem 0;
     }
   }
 
