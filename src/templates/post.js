@@ -16,7 +16,8 @@ const PostStyle = styled.div`
   }
 
   @media (max-width: 815px) {
-    grid-template-columns: 10px 1fr 10px;
+    display: block;
+    margin: 0 10px;
   }
 
   .postBody {
@@ -44,7 +45,7 @@ const PostStyle = styled.div`
       margin: 3rem 0 1.5rem 0;
 
       @media (max-width: 815px) {
-        font-size: 0.6em;
+        font-size: 0.9em;
       }
     }
   }
