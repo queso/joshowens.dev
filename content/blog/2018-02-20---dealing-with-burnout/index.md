@@ -48,4 +48,4 @@ In the last talk I gave at MeteorCamp in NYC, I gave advice I've used to guide m
 
 Oh, and enjoy this vlog of recent me time at the board game weekend:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/v9za938dIbs" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen />
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/v9za938dIbs" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen />
