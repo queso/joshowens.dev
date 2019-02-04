@@ -11,6 +11,14 @@ const PostStyle = styled.div`
   display: grid;
   grid-template-columns: 1fr 60% 1fr;
 
+  @media (max-width: 1150px) {
+    grid-template-columns: 10px 1fr 100px;
+  }
+
+  @media (max-width: 815px) {
+    grid-template-columns: 10px 1fr 10px;
+  }
+
   .postBody {
     grid-column-start: 2;
     max-width: 75ch;
@@ -22,6 +30,10 @@ const PostStyle = styled.div`
       letter-spacing: 0.01rem;
       font-weight: 300;
 
+      @media (max-width: 815px) {
+        font-size: 0.9em;
+      }
+
       .gatsby-resp-image-wrapper {
         margin: 3rem auto;
       }
@@ -30,10 +42,17 @@ const PostStyle = styled.div`
     h2 {
       font-size: 1.4em;
       margin: 3rem 0 1.5rem 0;
+
+      @media (max-width: 815px) {
+        font-size: 0.6em;
+      }
     }
   }
 
   .postSidebar {
+    @media (max-width: 815px) {
+      grid-column-start: 2;
+    }
     grid-column-start: 3;
     margin-top: 1rem;
     color: #666;
@@ -48,7 +67,7 @@ const HeaderStyle = styled.div`
   font-family: Roboto;
   color: white;
   position: relative;
-
+  min-height: 200px;
 
   .meta {
     &:before {
@@ -93,6 +112,12 @@ const HeaderStyle = styled.div`
     margin: 0 auto;
     z-index: 99;
     text-align: center;
+
+    @media (max-width: 815px) {
+      top: 10%;
+      font-size: 0.6em;
+      min-height: 220px;
+    }
   }
 
   img {
