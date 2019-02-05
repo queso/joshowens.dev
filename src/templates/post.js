@@ -94,6 +94,10 @@ const HeaderStyle = styled.div`
      font-size: 2.5em;
      padding: 0 0 1rem;
      margin: 0;
+     @media (max-width: 380px) {
+      font-size: 2.0em;
+      padding: 0 0 0.25rem;
+     }
     }
 
     time {
@@ -101,22 +105,20 @@ const HeaderStyle = styled.div`
     }
 
     position: absolute;
-    top: 30%;
-    left: 0;
-    right: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     padding: 2rem 0;
     margin: 0 auto;
     z-index: 99;
     text-align: center;
 
     @media (max-width: 815px) {
-      top: 10%;
       font-size: 0.6em;
-      padding: 1rem 0;
+      padding: 0.75rem 0;
     }
 
     @media (max-width: 355px) {
-      top: 5%;
       font-size: 0.5em;
       padding: 0.5rem 0;
     }
