@@ -1,9 +1,24 @@
 import React, { Fragment } from 'react';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
+import styled from 'styled-components';
 
 import Layout from '../components/Layout';
 import Link from '../components/Link';
+
+const BlogStyle = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 60% 1fr;
+
+`
+const MainStyle = styled.div`
+  grid-column-start: 2;
+  max-width: 75ch;
+`
+
+const SidebarStyle = styled.div`
+  grid-column-start: 3;
+`
 
 const Tags = ({ tags }) => (
   <Fragment>
@@ -29,45 +44,48 @@ const Blog = ({
 
   return (
     <Layout site={site}>
-      <div>
-        All tags on the blog:{' '}
-        <Tags tags={tags} />
-      </div>
+      <BlogStyle>
+        <MainStyle>
+          {posts.map(({ node: post }) => (
+            <div key={post.id}>
+              <h2>
+                <Link to={post.frontmatter.slug}>
+                  {post.frontmatter.title}
+                </Link>
+              </h2>
 
-      {posts.map(({ node: post }) => (
-        <div key={post.id}>
-          <h2>
-            <Link to={post.frontmatter.slug}>
-              {post.frontmatter.title}
-            </Link>
-          </h2>
+              <small>{post.frontmatter.date}</small>
 
-          <small>{post.frontmatter.date}</small>
+              <p>{post.excerpt}</p>
 
-          <p>{post.excerpt}</p>
+              <Link to={post.frontmatter.slug}>Continue Reading</Link>
+            </div>
+          ))}
 
-          <Link to={post.frontmatter.slug}>Continue Reading</Link>
-        </div>
-      ))}
+          <hr />
 
-      <hr />
+          <div>
+            Pagination:
+            <ul>
+              {nextPagePath && (
+                <li>
+                  <Link to={nextPagePath}>Next Page</Link>
+                </li>
+              )}
 
-      <div>
-        Pagination:
-        <ul>
-          {nextPagePath && (
-            <li>
-              <Link to={nextPagePath}>Next Page</Link>
-            </li>
-          )}
-
-          {previousPagePath && (
-            <li>
-              <Link to={previousPagePath}>Previous Page</Link>
-            </li>
-          )}
-        </ul>
-      </div>
+              {previousPagePath && (
+                <li>
+                  <Link to={previousPagePath}>Previous Page</Link>
+                </li>
+              )}
+            </ul>
+          </div>
+        </MainStyle>
+        <SidebarStyle>
+          All topics on the blog:{' '}
+          <Tags tags={tags} />
+        </SidebarStyle>
+      </BlogStyle>
     </Layout>
   );
 };

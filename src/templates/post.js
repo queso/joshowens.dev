@@ -12,10 +12,10 @@ const PostStyle = styled.div`
   grid-template-columns: 1fr 60% 1fr;
 
   @media (max-width: 1150px) {
-    grid-template-columns: 10px 1fr 100px;
+    grid-template-columns: 10px 1fr 20%;
   }
 
-  @media (max-width: 815px) {
+  @media (max-width: 880px) {
     display: block;
     margin: 0 10px;
   }
@@ -47,12 +47,14 @@ const PostStyle = styled.div`
   }
 
   .postSidebar {
-    @media (max-width: 815px) {
+    @media (max-width: 880px) {
       grid-column-start: 2;
     }
     grid-column-start: 3;
     margin-top: 1rem;
+    justify-self: center;
     color: #666;
+    width: 80%;
 
     .reading-time {
       margin-bottom: 1rem;
@@ -107,6 +109,7 @@ const HeaderStyle = styled.div`
     position: absolute;
     top: 50%;
     left: 50%;
+    width: 75%;
     transform: translate(-50%, -50%);
     padding: 2rem 0;
     margin: 0 auto;
