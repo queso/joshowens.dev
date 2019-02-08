@@ -10,14 +10,52 @@ const BlogStyle = styled.div`
   display: grid;
   grid-template-columns: 1fr 60% 1fr;
 
+  @media (max-width: 880px) {
+    display: block;
+    margin: 0 10px;
+  }
 `
 const MainStyle = styled.div`
   grid-column-start: 2;
   max-width: 75ch;
+  margin: 0 auto;
+
+  p {
+    font-size: 1.2em;
+    letter-spacing: 0.01rem;
+    font-weight: 300;
+
+    @media (max-width: 815px) {
+      font-size: 0.9em;
+    }
+  }
+
+  h2 {
+    font-size: 1.4em;
+    margin: 0 0 1rem;
+  }
+
+  .post {
+    margin: 3rem 0;
+
+    a.more-link {
+      color: cornflowerblue;
+    }
+
+    a.more-link:hover {
+      text-decoration: underline;
+    }
+  }
+
 `
 
 const SidebarStyle = styled.div`
   grid-column-start: 3;
+  margin: 3rem auto 1rem;
+  max-width: 75ch;
+  @media (min-width: 875px) {
+    width: 80%;
+  }
 `
 
 const Tags = ({ tags }) => (
@@ -47,7 +85,7 @@ const Blog = ({
       <BlogStyle>
         <MainStyle>
           {posts.map(({ node: post }) => (
-            <div key={post.id}>
+            <div className="post" key={post.id}>
               <h2>
                 <Link to={post.frontmatter.slug}>
                   {post.frontmatter.title}
@@ -58,7 +96,7 @@ const Blog = ({
 
               <p>{post.excerpt}</p>
 
-              <Link to={post.frontmatter.slug}>Continue Reading</Link>
+              <Link className="more-link" to={post.frontmatter.slug}>Continue Reading</Link>
             </div>
           ))}
 

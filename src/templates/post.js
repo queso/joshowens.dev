@@ -47,14 +47,14 @@ const PostStyle = styled.div`
   }
 
   .postSidebar {
-    @media (max-width: 880px) {
-      grid-column-start: 2;
-    }
     grid-column-start: 3;
-    margin-top: 1rem;
+    margin: 1rem auto 0;
     justify-self: center;
     color: #666;
-    width: 80%;
+    max-width: 75ch;
+    @media (min-width: 875px) {
+      width: 80%;
+    }
 
     .reading-time {
       margin-bottom: 1rem;
