@@ -48,7 +48,7 @@ const PostStyle = styled.div`
 
   .postSidebar {
     grid-column-start: 3;
-    margin: 1rem auto 0;
+    margin: 1.5rem auto 0;
     justify-self: center;
     color: #666;
     max-width: 75ch;
@@ -66,6 +66,7 @@ const HeaderStyle = styled.div`
   font-family: Roboto;
   color: white;
   position: relative;
+  margin-bottom: 2rem;
 
   .meta {
     &:before {

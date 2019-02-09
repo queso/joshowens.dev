@@ -56,17 +56,28 @@ const SidebarStyle = styled.div`
   @media (min-width: 875px) {
     width: 80%;
   }
+
+  a {
+    display: inline-block;
+    padding: 7px;
+    margin: 5px 10px 5px 0;
+    border: 1px solid #333;
+    border-radius: 3px;
+    color: white;
+    background-color: #333;
+  }
+
+  a:hover {
+    color: cornflowerblue;
+    background-color: white;
+  }
 `
 
 const Tags = ({ tags }) => (
   <Fragment>
-    <ul>
-      {tags.map(tag => (
-        <li key={tag}>
-          <Link to={`/tags/${tag}`}>{tag}</Link>
-        </li>
-      ))}
-    </ul>
+    {tags.map(tag => (
+        <Link to={`/tags/${tag}`}>{tag}</Link>
+    ))}
   </Fragment>
 );
 

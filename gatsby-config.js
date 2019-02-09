@@ -49,6 +49,7 @@ module.exports = {
     'gatsby-plugin-styled-components',
     'gatsby-plugin-catch-links',
     'gatsby-plugin-react-helmet',
+		'gatsby-plugin-netlify-headers',
     {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
@@ -56,6 +57,13 @@ module.exports = {
           families: ['Roboto:400,900', 'Roboto Slab:300,400']
         }
       }
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/assets`,
+        name: 'images',
+      },
     },
     {
       resolve: 'gatsby-plugin-manifest',
