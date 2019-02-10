@@ -94,8 +94,8 @@ const Blog = ({
 
   return (
     <Layout site={site}>
+			<BlogHeader />
       <BlogStyle>
-				<BlogHeader />
 				<MainStyle>
           {posts.map(({ node: post }) => (
             <div className="post" key={post.id}>
