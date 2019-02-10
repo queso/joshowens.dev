@@ -57,12 +57,13 @@ const HeaderStyle = styled.div`
 		h2 {
 			padding: 0;
 			margin: 0;
-			 @media (max-width: 815px) {
+			font-weight: 400;
+			@media (max-width: 815px) {
 				font-size: 1.1em;
-			 }
-			 @media (max-width: 490px) {
+			}
+			@media (max-width: 490px) {
 				font-size: 1.0em;
-			 }
+			}
 		}
 
     position: absolute;
