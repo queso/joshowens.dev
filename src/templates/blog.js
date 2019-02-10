@@ -32,8 +32,12 @@ const MainStyle = styled.div`
   }
 
   h2 {
-    font-size: 1.4em;
+    font-size: 2.5em;
     margin: 0 0 1rem;
+
+    @media (max-width: 815px) {
+      font-size: 1.6em;
+    }
   }
 
   .post {
@@ -77,7 +81,7 @@ const SidebarStyle = styled.div`
 const Tags = ({ tags }) => (
   <Fragment>
     {tags.map(tag => (
-        <Link to={`/tags/${tag}`}>{tag}</Link>
+        <Link key={tag} to={`/tags/${tag}`}>{tag}</Link>
     ))}
   </Fragment>
 );
