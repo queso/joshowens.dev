@@ -5,6 +5,7 @@ import styled from 'styled-components';
 
 import Layout from '../components/Layout';
 import Link from '../components/Link';
+import BlogHeader from '../components/BlogHeader';
 
 const BlogStyle = styled.div`
   display: grid;
@@ -94,7 +95,8 @@ const Blog = ({
   return (
     <Layout site={site}>
       <BlogStyle>
-        <MainStyle>
+				<BlogHeader />
+				<MainStyle>
           {posts.map(({ node: post }) => (
             <div className="post" key={post.id}>
               <h2>
