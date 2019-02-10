@@ -4,7 +4,6 @@ slug: "/building-your-own-meteor-galaxy-hosting-setup"
 date: "2016-03-29T16:24:31.073Z"
 featured: false
 draft: false
-tags: []
 tags: ["javascript", "meteor.js", "meteor hosting"]
 keywords: ["meteor.js", "scalable hosting for meteor.js", "hosting tips"]
 banner: "./images/Data-Center-Header.jpg"
