@@ -1,7 +1,7 @@
 const path = require('path');
 const componentWithMDXScope = require('gatsby-mdx/component-with-mdx-scope');
 
-const PAGINATION_OFFSET = 2;
+const PAGINATION_OFFSET = 4;
 
 const pluckTags = edges =>
   Object.keys(
@@ -66,7 +66,7 @@ const createPosts = (createPage, edges) => {
 const createBlog = (createPage, edges) => {
   const tags = pluckTags(edges);
 
-  createPaginatedPages(createPage, edges, '/blog', { tags });
+  createPaginatedPages(createPage, edges, '/', { tags });
 };
 
 const createPaginatedPages = (
@@ -88,7 +88,10 @@ const createPaginatedPages = (
   }, []);
 
   pages.forEach((page, index) => {
-    const previousPagePath = `${pathPrefix}/${index + 1}`;
+    if (index > 0 && pathPrefix == "/") {
+      pathPrefix = "/page";
+    }
+    const previousPagePath = pathPrefix == "/" ?`/page/${index + 1}`  : `${pathPrefix}/${index + 1}` ;
     const nextPagePath =
       index === 1 ? pathPrefix : `${pathPrefix}/${index - 1}`;
 
