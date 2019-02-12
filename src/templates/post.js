@@ -190,19 +190,6 @@ export default function Post({
         <div className="postBody">
           <MDXRenderer >{mdx.code.body}</MDXRenderer>
           <hr />
-
-          {prev && (
-            <span>
-              Previous{' '}
-              <Link to={prev.fields.slug}>{prev.fields.title}</Link>
-            </span>
-          )}
-          {next && (
-            <span>
-              Next{' '}
-              <Link to={next.fields.slug}>{next.fields.title}</Link>
-            </span>
-          )}
         </div>
 
         <div className="postSidebar">

@@ -92,8 +92,11 @@ const createPaginatedPages = (
       pathPrefix = "/page";
     }
     const previousPagePath = pathPrefix == "/" ?`/page/${index + 1}`  : `${pathPrefix}/${index + 1}` ;
-    const nextPagePath =
+    let nextPagePath =
       index === 1 ? pathPrefix : `${pathPrefix}/${index - 1}`;
+    if (index === 1 && pathPrefix == "/page") {
+      nextPagePath = "/";
+    }
 
     createPage({
       path: index > 0 ? `${pathPrefix}/${index}` : `${pathPrefix}`,

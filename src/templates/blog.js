@@ -120,20 +120,13 @@ const Blog = ({
           <hr />
 
           <div>
-            Pagination:
-            <ul>
-              {nextPagePath && (
-                <li>
-                  <Link to={nextPagePath}>Next Page</Link>
-                </li>
-              )}
+						{nextPagePath && (
+								<Link to={nextPagePath}>Newer Posts</Link>
+						)}
 
-              {previousPagePath && (
-                <li>
-                  <Link to={previousPagePath}>Previous Page</Link>
-                </li>
-              )}
-            </ul>
+						{previousPagePath && (
+								<Link to={previousPagePath}>Older Posts</Link>
+						)}
           </div>
         </MainStyle>
         <SidebarStyle>
