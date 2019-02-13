@@ -50,9 +50,6 @@ module.exports = {
     'gatsby-plugin-catch-links',
     'gatsby-plugin-react-helmet',
 		'gatsby-plugin-netlify-headers',
-		{
-			resolve: `gatsby-plugin-feed`
-		},
     {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
