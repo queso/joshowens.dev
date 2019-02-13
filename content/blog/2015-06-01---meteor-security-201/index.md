@@ -7,7 +7,7 @@ draft: false
 tags:
   - security
   - meteor.js
-description: "Securing Meteor publications is vital. Are you doing it right?
+description: "Securing Meteor publications is vital. Are you doing it right?"
 keywords:
   - security
   - meteor.js
