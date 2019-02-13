@@ -52,6 +52,25 @@ const MainStyle = styled.div`
     }
   }
 
+  .more-posts {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+
+    a {
+      display:block;
+      margin: 7px 0;
+    }
+
+    .older {
+
+    }
+
+    .newer {
+
+    }
+  }
+
 `
 
 const SidebarStyle = styled.div`
@@ -119,13 +138,13 @@ const Blog = ({
 
           <hr />
 
-          <div>
+          <div className="more-posts">
 						{nextPagePath && (
-								<Link to={nextPagePath}>Newer Posts</Link>
+								<Link className="newer" to={nextPagePath}>Newer Posts</Link>
 						)}
 
 						{previousPagePath && (
-								<Link to={previousPagePath}>Older Posts</Link>
+								<Link className="older" to={previousPagePath}>Older Posts</Link>
 						)}
           </div>
         </MainStyle>
