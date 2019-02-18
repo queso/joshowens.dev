@@ -48,6 +48,10 @@ const GlobalStyle = createGlobalStyle`
   a:hover {
     color: cornflowerblue;
   }
+
+  time {
+    font-size: 0.9em;
+  }
 `;
 
 

@@ -117,9 +117,9 @@ const Blog = ({
 
   return (
     <Layout site={site}>
-			<BlogHeader />
+      <BlogHeader />
       <BlogStyle>
-				<MainStyle>
+        <MainStyle>
           {posts.map(({ node: post }) => (
             <div className="post" key={post.id}>
               <h2>
@@ -128,7 +128,7 @@ const Blog = ({
                 </Link>
               </h2>
 
-              <small>{post.frontmatter.date}</small>
+              <time>{post.frontmatter.date}</time>
 
               <p>{post.excerpt}</p>
 
@@ -139,13 +139,13 @@ const Blog = ({
           <hr />
 
           <div className="more-posts">
-						{nextPagePath && (
-								<Link className="newer" to={nextPagePath}>Newer Posts</Link>
-						)}
+            {nextPagePath && (
+              <Link className="newer" to={nextPagePath}>&larr; Newer Posts</Link>
+            )}
 
-						{previousPagePath && (
-								<Link className="older" to={previousPagePath}>Older Posts</Link>
-						)}
+            {previousPagePath && (
+              <Link className="older" to={previousPagePath}>Older Posts &rarr;</Link>
+            )}
           </div>
         </MainStyle>
         <SidebarStyle>
