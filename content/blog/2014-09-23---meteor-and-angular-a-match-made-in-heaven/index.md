@@ -7,7 +7,7 @@ draft: false
 tags:
   - meteor.js
   - angular
-description: "Can Meteor.js and Angular.js work together?
+description: "Can Meteor.js and Angular.js work together?"
 keywords:
   - angular.js
   - meteor.js
