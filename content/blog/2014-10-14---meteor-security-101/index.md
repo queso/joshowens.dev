@@ -11,10 +11,8 @@ description: "Thinking about launching a Meteor app? Learn how to secure it."
 keywords:
   - meteor.js
   - security
-banner: "./images/Burnout-Header.jpeg"
+banner: "./images/security-blankets.jpg"
 ---
-
-![header-cover](./images/security-blankets.jpg)
 
 When I was part of the team at Differential, we spent a lot of time thinking about best practices with a focus security and the implications of the data we exposed in publications. Having recently worked on projects that weren't build by Differential, I am starting to be exposed to other code and practices that other programmers may be following. I wanted to go over some of the common security holes I have found recently, why they happen, and how you avoid them!
 
