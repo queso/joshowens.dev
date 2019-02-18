@@ -17,7 +17,7 @@ A Meteor.js club member asked about an easy way to add comments to a 'Meteor pag
 
 ![meteor.js-join-meme](./images/joined-data-meme.jpg)
 
-### Couldn't you just add <insert comment service here>?
+### Couldn't you just add "insert comment service here"?
 
 Sure, we could just add disqus, but then you wouldn't own your data, right? It is pretty easy, we can just add a rendered function on the body and it will insert the js code we need:
 
