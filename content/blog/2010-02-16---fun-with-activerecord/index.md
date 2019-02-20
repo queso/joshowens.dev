@@ -10,7 +10,6 @@ description: "Learn how to leverage activerecord to your advantage in your rails
 keywords:
   - rails
   - activerecord
-banner: ""
 ---
 
 Recently, I’ve been working on a medical provider (doctors, pharamcies,

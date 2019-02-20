@@ -11,7 +11,6 @@ description: "Thinking about writing mocks or stubs for rails test? Learn how to
 keywords:
   - rails
   - testing
-banner: ""
 ---
 
 Lately I’ve been seeing some things that make me worry. Mocking and

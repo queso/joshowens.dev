@@ -12,7 +12,6 @@ keywords:
   - launch your app quickly
   - mvp
   - iterate
-banner: ""
 ---
 
 I’ve seen some talk/posts lately of doing quick launch products. I

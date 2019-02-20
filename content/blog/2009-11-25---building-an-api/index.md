@@ -14,7 +14,6 @@ keywords:
   - api structuring
   - api design
   - ruby on rails
-banner: ""
 ---
 
 Ever thought about building an api for your web app? Not sure where to

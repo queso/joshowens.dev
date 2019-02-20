@@ -11,7 +11,6 @@ keywords:
   - developer advice
   - throw your code away
   - finding the right solutions
-banner: ""
 ---
 
 Ever get an idea in your head, and it seems like it will solve all your

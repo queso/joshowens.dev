@@ -8,7 +8,6 @@ tags: []
 description: "Found this link interesting"
 keywords:
   - textmate
-banner: "./images/Burnout-Header.jpeg"
 ---
 
 **[TextMate shortcuts you should be using require

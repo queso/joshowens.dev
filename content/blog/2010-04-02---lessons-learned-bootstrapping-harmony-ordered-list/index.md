@@ -8,7 +8,6 @@ tags: []
 description: "An interesting link I wanted to share"
 keywords:
   - bootstrapping
-banner: ""
 ---
 
 **[Lessons Learned Bootstrapping Harmony - Ordered

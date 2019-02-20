@@ -12,7 +12,6 @@ keywords:
   - seed data
   - ruby on rails
   - rails
-banner: ""
 ---
 
 Starting your app? Need some data? Larger amounts of data are an oft

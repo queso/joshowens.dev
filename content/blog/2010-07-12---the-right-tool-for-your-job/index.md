@@ -10,7 +10,6 @@ tags:
 description: "Picking the right library or package can be hard, Here are things I look for..."
 keywords:
   - developer advice
-banner: "./images/Burnout-Header.jpeg"
 ---
 
 Ever wonder if you should use Workling or Delayed::Job? RestfulAuth or

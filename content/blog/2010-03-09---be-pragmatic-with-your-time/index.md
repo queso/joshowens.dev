@@ -11,7 +11,6 @@ keywords:
   - how to write code
   - developer advice
   - code workflow
-banner: ""
 ---
 
 So you’re trying to write that awesome new feature you’ve been chomping

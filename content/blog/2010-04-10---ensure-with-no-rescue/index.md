@@ -10,7 +10,6 @@ description: "I found that you can make a code block always runs without a rescu
 keywords:
   - ruby
   - rescue code
-banner: ""
 ---
 
 Need to ensure some code runs no matter what happens? Even with
