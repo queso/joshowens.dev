@@ -8,6 +8,7 @@ import 'prismjs/themes/prism-okaidia.css';
 
 import mdxComponents from './mdx';
 import Nav from './Nav';
+import Footer from './Footer';
 
 const GlobalStyle = createGlobalStyle`
   html, body {
@@ -89,6 +90,7 @@ export default ({ site, frontmatter = {}, children }) => {
           {children}
         </Fragment>
       </MDXProvider>
+      <Footer />
     </Fragment>
   );
 };
