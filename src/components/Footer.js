@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import {SocialTwitterCircular} from 'styled-icons/typicons/SocialTwitterCircular';
 import {SocialGithubCircular} from 'styled-icons/typicons/SocialGithubCircular';

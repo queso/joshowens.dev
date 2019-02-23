@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import MDXRenderer from 'gatsby-mdx/mdx-renderer';
@@ -6,6 +6,7 @@ import styled from 'styled-components';
 
 import Layout from '../components/Layout';
 import Link from '../components/Link';
+import AuthorInfo from '../components/AuthorInfo';
 
 const PostStyle = styled.div`
   display: grid;
@@ -43,6 +44,12 @@ const PostStyle = styled.div`
     h2 {
       font-size: 1.4em;
       margin: 3rem 0 1.5rem 0;
+    }
+
+    hr {
+      border: 1px solid #ccc;
+      margin: 2rem auto;
+      width: 50%;
     }
   }
 
@@ -190,6 +197,7 @@ export default function Post({
         <div className="postBody">
           <MDXRenderer >{mdx.code.body}</MDXRenderer>
           <hr />
+          <AuthorInfo />
         </div>
 
         <div className="postSidebar">
