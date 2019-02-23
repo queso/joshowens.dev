@@ -16,6 +16,10 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     font-family: Roboto Slab, serif;
     color: #333;
+
+    @media (min-width: 2000px) {
+      font-size: 1.5em;
+    }
   }
 
   ${() => {

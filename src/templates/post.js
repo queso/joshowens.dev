@@ -21,6 +21,13 @@ const PostStyle = styled.div`
     margin: 0 10px;
   }
 
+  time {
+    font-size: 0.9em;
+    text-align: center;
+    display: block;
+    color: #666;
+  }
+
   .postBody {
     grid-column-start: 2;
     max-width: 75ch;
@@ -110,9 +117,6 @@ const HeaderStyle = styled.div`
      }
     }
 
-    time {
-      font-size: 0.9em;
-    }
 
     position: absolute;
     top: 50%;
@@ -168,7 +172,7 @@ const TagList = ({ list = [] }) => (
     Topics:
     <br />
     {list.map(tag => (
-        <Link to={`/tags/${tag}`}>{tag}</Link>
+      <Link key={tag} to={`/tags/${tag}`}>{tag}</Link>
     ))}
   </TagStyle>
 );
@@ -182,7 +186,9 @@ export default function Post({
       <HeaderStyle>
         <div className="meta">
           <h1>{mdx.frontmatter.title}</h1>
-          <time>{mdx.frontmatter.date}</time>
+          <div className="reading-time">
+            {mdx.timeToRead} {mdx.timeToRead > 1 ? 'minutes' : 'minute' } to read
+          </div>
         </div>
 
         {mdx.frontmatter.banner && (
@@ -196,14 +202,12 @@ export default function Post({
       <PostStyle>
         <div className="postBody">
           <MDXRenderer >{mdx.code.body}</MDXRenderer>
+          <time>{mdx.frontmatter.date}</time>
           <hr />
           <AuthorInfo />
         </div>
 
         <div className="postSidebar">
-          <div className="reading-time">
-            {mdx.timeToRead} {mdx.timeToRead > 1 ? 'minutes' : 'minute' } to read
-          </div>
           <TagList list={mdx.frontmatter.tags} />
 
         </div>

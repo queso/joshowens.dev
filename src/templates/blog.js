@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react';
 import { graphql } from 'gatsby';
-import Img from 'gatsby-image';
 import styled from 'styled-components';
 
 import Layout from '../components/Layout';
@@ -15,6 +14,7 @@ const BlogStyle = styled.div`
     display: block;
     margin: 0 10px;
   }
+
 `
 const MainStyle = styled.div`
   grid-column-start: 2;
@@ -40,6 +40,10 @@ const MainStyle = styled.div`
     }
   }
 
+  .reading-time {
+    color: #777;
+  }
+
   .post {
     margin: 3rem 0;
 
@@ -50,6 +54,11 @@ const MainStyle = styled.div`
     a.more-link:hover {
       text-decoration: underline;
     }
+  }
+
+  hr {
+    color: #777;
+    margin 2rem auto;
   }
 
   .more-posts {
@@ -128,7 +137,9 @@ const Blog = ({
                 </Link>
               </h2>
 
-              <time>{post.frontmatter.date}</time>
+              <div className="reading-time">
+                {post.timeToRead} {post.timeToRead > 1 ? 'minutes' : 'minute' } read
+              </div>
 
               <p>{post.excerpt}</p>
 
@@ -169,6 +180,7 @@ export const pageQuery = graphql`
         node {
           excerpt(pruneLength: 300)
           id
+          timeToRead
           frontmatter {
             title
             date(formatString: "MMMM DD, YYYY")
