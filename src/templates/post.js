@@ -18,7 +18,7 @@ const PostStyle = styled.div`
 
   @media (max-width: 880px) {
     display: block;
-    margin: 0 10px;
+    margin: 0 20px;
   }
 
   time {
@@ -40,7 +40,7 @@ const PostStyle = styled.div`
       font-weight: 300;
 
       @media (max-width: 815px) {
-        font-size: 0.9em;
+        font-size: 1em;
       }
 
       .gatsby-resp-image-wrapper {
