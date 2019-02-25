@@ -5,6 +5,7 @@ date: "2016-12-14T02:42:13.211Z"
 featured: false
 draft: false
 tags: ["javascript", "seo"]
+description: "Take a few minutes and really spruce up your javascript app search results. Learn how..."
 keywords: ["seo", "seo for javascript", "javascript tips"]
 banner: "./images/5_seo_tips.jpg"
 ---
@@ -48,11 +49,11 @@ I recently used the [AggregateRating schema](https://schema.org/AggregateRating)
 
 The results went from dull and boring:
 
-![](./images/Screen-Shot-2016-10-25-at-3-20-19-PM.png)
+![before seo results](./images/Screen-Shot-2016-10-25-at-3-20-19-PM.png)
 
 To a result with rich snippets like this:
 
-![](./images/Screen-Shot-2016-10-28-at-1-37-12-PM.png)
+![after seo results](./images/Screen-Shot-2016-10-28-at-1-37-12-PM.png)
 
 ## Social Media Optimization
 
@@ -73,7 +74,7 @@ I run Crater.io and we recently moved the entire site over to React, and SEO was
 ```
 As you can see, just adding a few meta tags at the top will give you a whole different look on twitter:
 
-![](./images/Screen-Shot-2016-12-12-at-9-40-56-AM.png)
+![Social Media Ooptimized for twitter](./images/Screen-Shot-2016-12-12-at-9-40-56-AM.png)
 
 ## Server-side rendering
 
@@ -100,7 +101,7 @@ For RSS feeds, this might make more sense if you have a site that is being updat
 
 Once you have one of those two files, you can go into the Google Webmaster tool and add the sitemap or rss feed to let Google know about URLs that your site has. Google will then check those files for updates and feed new data straight to the Google Bots to consume new stuff for you! Here is an example of what the dashboard looks like for a sitemap of wendyowensbooks.com:
 
-![](./images/Screen-Shot-2016-12-12-at-10-02-32-AM.png)
+![Google webmaster tool with sitemap added](./images/Screen-Shot-2016-12-12-at-10-02-32-AM.png)
 
 ## Testing it all
 
