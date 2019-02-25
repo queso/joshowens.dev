@@ -18,7 +18,7 @@ const PostStyle = styled.div`
 
   @media (max-width: 880px) {
     display: block;
-    margin: 0 20px;
+    margin: 0 2.2rem;
   }
 
   time {
@@ -35,12 +35,12 @@ const PostStyle = styled.div`
     padding-bottom: 3rem;
 
     p {
-      font-size: 1.2em;
+      font-size: 1em;
       letter-spacing: 0.01rem;
       font-weight: 300;
 
-      @media (max-width: 815px) {
-        font-size: 1em;
+      @media (min-width: 815px) {
+        font-size: 1.2em;
       }
 
       .gatsby-resp-image-wrapper {
@@ -138,15 +138,6 @@ const HeaderStyle = styled.div`
       padding: 0.5rem 0;
     }
   }
-
-  img {
-    position: "absolute";
-    left: 0;
-    top: 0;
-    width: "100%";
-    height: "100%";
-  }
-
 `
 
 
@@ -227,7 +218,7 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         banner {
           childImageSharp {
-            sizes(maxWidth: 900) {
+            sizes(maxHeight: 400) {
               ...GatsbyImageSharpSizes
             }
           }
