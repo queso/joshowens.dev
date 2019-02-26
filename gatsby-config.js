@@ -50,6 +50,59 @@ module.exports = {
     'gatsby-plugin-catch-links',
     'gatsby-plugin-react-helmet',
 		'gatsby-plugin-netlify-headers',
+		{
+			resolve: `gatsby-plugin-feed`,
+			options: {
+				query: `
+					{
+						site {
+							siteMetadata {
+								title
+								description
+								siteUrl
+								site_url: siteUrl
+							}
+						}
+					}
+				`,
+				feeds: [
+					{
+						serialize: ({ query: { site, allMdx } }) => {
+							return allMdx.edges.map(edge => {
+								return Object.assign({}, edge.node.frontmatter, {
+									description: edge.node.excerpt,
+									date: edge.node.frontmatter.date,
+									url: site.siteMetadata.siteUrl + edge.node.fields.slug,
+									guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
+								})
+							})
+						},
+						query: `
+							{
+								allMdx(
+									limit: 1000,
+									sort: { order: DESC, fields: [frontmatter___date] },
+									filter: {frontmatter: { draft: { ne: true } }}
+								) {
+									edges {
+										node {
+											excerpt
+											fields { slug }
+											frontmatter {
+												title
+												date
+											}
+										}
+									}
+								}
+							}
+						`,
+						output: "/rss.xml",
+						title: "Gatsby RSS Feed",
+					},
+				],
+			},
+		},
     {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
