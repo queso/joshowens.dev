@@ -86,6 +86,7 @@ export default ({ site, frontmatter = {}, children }) => {
           { name: 'keywords', content: keywords },
         ]}
       >
+				<link rel="alternate" type="application/rss+xml" title="Subscribe to all the news" href="/rss.xml" />
         <html lang="en" />
       </Helmet>
 
