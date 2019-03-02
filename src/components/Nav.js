@@ -30,8 +30,8 @@ const NavStyle = styled.div`
 `
 
 const NAVIGATION = [
+  { to: '/', label: 'Home' },
   { to: '/about', label: 'About' },
-  { to: '/', label: 'Blog' },
   { to: 'https://spacedojo.com', label: 'Courses' },
 ];
 
