@@ -82,6 +82,25 @@ const HeaderStyle = styled.div`
   position: relative;
   margin-bottom: 2rem;
 
+	:after {
+		transition: opacity 2.5s ease;
+    transition-delay: .75s;
+    -moz-pointer-events: none;
+    -webkit-pointer-events: none;
+    -ms-pointer-events: none;
+    pointer-events: none;
+    background-color: #222;
+    content: "";
+    display: block;
+    height: 100%;
+    left: 0;
+    opacity: .5;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+	}
+
   .meta {
     &:before {
       position: absolute;
