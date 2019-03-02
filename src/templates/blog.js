@@ -12,7 +12,7 @@ const BlogStyle = styled.div`
 
   @media (max-width: 880px) {
     display: block;
-    margin: 0 10px;
+    margin: 0 2.2rem;
   }
 
 `
