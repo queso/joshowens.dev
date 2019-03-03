@@ -35,6 +35,10 @@ const PostStyle = styled.div`
     margin: 0 auto;
     padding-bottom: 3rem;
 
+    pre {
+      overflow-x: auto;
+    }
+
     p {
       font-size: 1em;
       letter-spacing: 0.01rem;

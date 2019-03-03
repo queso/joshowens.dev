@@ -2,12 +2,18 @@ import React from 'react';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
 
+const NoImageStyle = styled.div`
+  height: 400px;
+  background-color: cornflowerblue;
+`
+
 const LogoStyle = styled.div`
 	max-width: 448px;
 	width: 40%;
 	margin: 0 auto;
   padding-bottom: 1rem;
 `
+
 const HeaderStyle = styled.div`
 	grid-column-start: span 3;
 	position: relative;
@@ -108,7 +114,7 @@ const HeaderStyle = styled.div`
 const BlogHeader = ({ header, logo, title, subtitle, time}) => {
   return (
     <HeaderStyle>
-      <Img fluid={ header.childImageSharp.fluid } />
+      <Image image={header} />
       <div className="meta">
         <Logo logo={logo} />
         <h1>{title}</h1>
@@ -118,6 +124,13 @@ const BlogHeader = ({ header, logo, title, subtitle, time}) => {
   )
 }
 
+const Image = ({image}) => {
+  if (image) {
+    return <Img fluid={ image.childImageSharp.fluid } />
+  } else {
+    return <NoImageStyle />
+  }
+}
 const Subtitle = ({ subtitle, time }) => {
   if (subtitle) {
     return <h2>{subtitle}</h2>
