@@ -3,8 +3,12 @@ import Img from 'gatsby-image';
 import styled from 'styled-components';
 
 const NoImageStyle = styled.div`
-  height: 400px;
+  height: 10rem;
   background-color: cornflowerblue;
+
+  @media (min-width: 850px) {
+    height: 15rem;
+  }
 `
 
 const LogoStyle = styled.div`
