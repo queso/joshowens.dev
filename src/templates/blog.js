@@ -115,7 +115,7 @@ const Tags = ({ tags }) => (
 );
 
 const Blog = ({
-  data: { site, allMdx },
+  data: { site, allMdx, header, logo },
   pageContext: { pagination, tags },
 }) => {
   const { page, nextPagePath, previousPagePath } = pagination;
@@ -126,7 +126,7 @@ const Blog = ({
 
   return (
     <Layout site={site}>
-      <BlogHeader />
+      <BlogHeader header={header} logo={logo} title={'Josh Owens'} subtitle={'developer, teacher, entrepreneur'} />
       <BlogStyle>
         <MainStyle>
           {posts.map(({ node: post }) => (
@@ -174,6 +174,20 @@ export const pageQuery = graphql`
   query {
     site {
       ...site
+    }
+    header: file(relativePath: {glob: "blog-header.jpg"}) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    logo: file(relativePath: {glob: "logo.png"}) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
     }
     allMdx {
       edges {

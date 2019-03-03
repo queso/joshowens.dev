@@ -1,5 +1,4 @@
 import React from 'react';
-import { StaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
 
@@ -7,11 +6,31 @@ const LogoStyle = styled.div`
 	max-width: 448px;
 	width: 40%;
 	margin: 0 auto;
+  padding-bottom: 1rem;
 `
 const HeaderStyle = styled.div`
 	grid-column-start: span 3;
 	position: relative;
   font-family: Roboto;
+
+  :after {
+    transition: opacity 2.5s ease;
+    transition-delay: .75s;
+    -moz-pointer-events: none;
+    -webkit-pointer-events: none;
+    -ms-pointer-events: none;
+    pointer-events: none;
+    background-color: #222;
+    content: "";
+    display: block;
+    height: 100%;
+    left: 0;
+    opacity: .5;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+  }
 
   .meta {
 		color: white;
@@ -42,7 +61,7 @@ const HeaderStyle = styled.div`
      text-transform: uppercase;
      font-weight: 900;
      font-size: 2.5em;
-     padding: 1rem 0 0;
+     padding: 0;
      margin: 0;
      @media (max-width: 815px) {
       font-size: 2.0em;
@@ -65,7 +84,9 @@ const HeaderStyle = styled.div`
 				font-size: 1.0em;
 			}
 		}
-
+    .reading-time {
+      padding: 0.5rem 0 0;
+    }
     position: absolute;
     top: 50%;
     left: 50%;
@@ -84,41 +105,42 @@ const HeaderStyle = styled.div`
 	}
 `
 
-const BlogHeader = () => {
+const BlogHeader = ({ header, logo, title, subtitle, time}) => {
   return (
-			<StaticQuery
-				query={graphql`
-					query {
-						header: file(relativePath: {glob: "blog-header.jpg"}) {
-							childImageSharp {
-								fluid {
-									...GatsbyImageSharpFluid
-								}
-							}
-						}
-						logo: file(relativePath: {glob: "logo.png"}) {
-							childImageSharp {
-								fluid {
-									...GatsbyImageSharpFluid
-								}
-							}
-						}
-					}
-				`}
-				render={ data => (
-					<HeaderStyle>
-						<Img fluid={data.header.childImageSharp.fluid} />
-						<div className="meta">
-							<LogoStyle>
-								<Img fluid={data.logo.childImageSharp.fluid} />
-							</LogoStyle>
-							<h1>Josh Owens</h1>
-							<h2>developer, teacher, entrepreneur</h2>
-						</div>
-					</HeaderStyle>
-				)}
-			/>
+    <HeaderStyle>
+      <Img fluid={ header.childImageSharp.fluid } />
+      <div className="meta">
+        <Logo logo={logo} />
+        <h1>{title}</h1>
+        <Subtitle subtitle={subtitle} time={time} />
+      </div>
+    </HeaderStyle>
   )
+}
+
+const Subtitle = ({ subtitle, time }) => {
+  if (subtitle) {
+    return <h2>{subtitle}</h2>
+  } else {
+    return (
+      <div className="reading-time">
+        {time} {time > 1 ? 'minutes' : 'minute' } to read
+      </div>
+    )
+  }
+}
+
+const Logo = ({ logo }) => {
+  if (logo) {
+    return (
+      <LogoStyle>
+        <Img fluid={ logo.childImageSharp.fluid } />
+      </LogoStyle>
+     )
+   } else {
+    return null;
+   }
+
 }
 
 export default BlogHeader;

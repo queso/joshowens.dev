@@ -1,11 +1,11 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import Img from 'gatsby-image';
 import MDXRenderer from 'gatsby-mdx/mdx-renderer';
 import styled from 'styled-components';
 
 import Layout from '../components/Layout';
 import Link from '../components/Link';
+import BlogHeader from '../components/BlogHeader';
 import AuthorInfo from '../components/AuthorInfo';
 
 const PostStyle = styled.div`
@@ -26,6 +26,7 @@ const PostStyle = styled.div`
     text-align: center;
     display: block;
     color: #666;
+    padding-top: 2rem;
   }
 
   .postBody {
@@ -69,96 +70,8 @@ const PostStyle = styled.div`
     @media (min-width: 875px) {
       width: 80%;
     }
-
-    .reading-time {
-      margin-bottom: 1rem;
-    }
   }
 `
-const HeaderStyle = styled.div`
-  width: 100%;
-  font-family: Roboto;
-  color: white;
-  position: relative;
-  margin-bottom: 2rem;
-
-	:after {
-		transition: opacity 2.5s ease;
-    transition-delay: .75s;
-    -moz-pointer-events: none;
-    -webkit-pointer-events: none;
-    -ms-pointer-events: none;
-    pointer-events: none;
-    background-color: #222;
-    content: "";
-    display: block;
-    height: 100%;
-    left: 0;
-    opacity: .5;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    z-index: 1;
-	}
-
-  .meta {
-    &:before {
-      position: absolute;
-      content: "";
-      height: 1px;
-      width: 100px;
-      background: #ffffff;
-      top: 0;
-      left: 50%;
-      margin-left: -50px;
-    }
-
-    &:after {
-      position: absolute;
-      content: "";
-      height: 1px;
-      width: 100px;
-      background: #ffffff;
-      bottom: 0;
-      left: 50%;
-      margin-left: -50px;
-    }
-
-    h1 {
-     text-transform: uppercase;
-     font-weight: 900;
-     font-size: 2.5em;
-     padding: 0 0 1rem;
-     margin: 0;
-     @media (max-width: 380px) {
-      font-size: 2.0em;
-      padding: 0 0 0.25rem;
-     }
-    }
-
-
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 75%;
-    transform: translate(-50%, -50%);
-    padding: 2rem 0;
-    margin: 0 auto;
-    z-index: 99;
-    text-align: center;
-
-    @media (max-width: 815px) {
-      font-size: 0.6em;
-      padding: 0.75rem 0;
-    }
-
-    @media (max-width: 355px) {
-      font-size: 0.5em;
-      padding: 0.5rem 0;
-    }
-  }
-`
-
 
 const TagStyle = styled.div`
   a {
@@ -193,33 +106,22 @@ export default function Post({
 }) {
   return (
     <Layout site={site} frontmatter={mdx.frontmatter}>
-      <HeaderStyle>
-        <div className="meta">
-          <h1>{mdx.frontmatter.title}</h1>
-          <div className="reading-time">
-            {mdx.timeToRead} {mdx.timeToRead > 1 ? 'minutes' : 'minute' } to read
-          </div>
-        </div>
-
-        {mdx.frontmatter.banner && (
-          <Img
-            sizes={mdx.frontmatter.banner.childImageSharp.sizes}
-            alt={site.siteMetadata.keywords.join(', ')}
-          />
-        )}
-      </HeaderStyle>
+      <BlogHeader
+        header={mdx.frontmatter.banner}
+        title={mdx.frontmatter.title}
+        time={mdx.timeToRead}
+      />
 
       <PostStyle>
         <div className="postBody">
           <MDXRenderer >{mdx.code.body}</MDXRenderer>
-          <time>{mdx.frontmatter.date}</time>
+          <time>Written on {mdx.frontmatter.date}</time>
           <hr />
           <AuthorInfo />
         </div>
 
         <div className="postSidebar">
           <TagList list={mdx.frontmatter.tags} />
-
         </div>
       </PostStyle>
     </Layout>
@@ -237,8 +139,8 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         banner {
           childImageSharp {
-            sizes(maxHeight: 400) {
-              ...GatsbyImageSharpSizes
+            fluid {
+              ...GatsbyImageSharpFluid
             }
           }
         }
