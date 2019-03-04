@@ -12,15 +12,21 @@ const NoImageStyle = styled.div`
 `
 
 const LogoStyle = styled.div`
-	max-width: 448px;
-	width: 40%;
-	margin: 0 auto;
+  max-width: 448px;
+  width: 40%;
+  margin: 0 auto;
   padding-bottom: 1rem;
+  @media (max-width: 810px) {
+    padding: 0.5rem 0;
+  }
+  @media (max-width: 491px) {
+    padding: 0 0;
+  }
 `
 
 const HeaderStyle = styled.div`
-	grid-column-start: span 3;
-	position: relative;
+  grid-column-start: span 3;
+  position: relative;
   font-family: Roboto;
 
   :after {
@@ -43,7 +49,25 @@ const HeaderStyle = styled.div`
   }
 
   .meta {
-		color: white;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 75%;
+    transform: translate(-50%, -50%);
+    padding: 2rem 0;
+    margin: 0 auto;
+    z-index: 99;
+    text-align: center;
+    @media (max-width: 790px) {
+      padding: 1rem 0;
+    }
+    @media (max-width: 620px) {
+      padding: 0.35rem 0;
+    }
+    @media (max-width: 400px) {
+      padding: 0.25rem 0;
+    }
 
     &:before {
       position: absolute;
@@ -68,51 +92,45 @@ const HeaderStyle = styled.div`
     }
 
     h1 {
-     text-transform: uppercase;
-     font-weight: 900;
-     font-size: 2.5em;
-     padding: 0;
-     margin: 0;
-     @media (max-width: 815px) {
-      font-size: 2.0em;
-			padding: 0.5rem 0 0;
-     }
-     @media (max-width: 490px) {
-      font-size: 1.4em;
-			padding: 0.4rem 0 0;
-     }
+      text-transform: uppercase;
+      font-weight: 900;
+      font-size: 2.5em;
+      padding: 0;
+      margin: 0;
+      @media (max-width: 815px) {
+        font-size: 2.0em;
+        padding: 0.5rem 0 0;
+      }
+      @media (max-width: 525px) {
+        font-size: 1.4em;
+        padding: 0.4rem 0 0;
+      }
+
+      @media (max-width: 400px) {
+        font-size: 1.2em;
+        padding: 0.2rem 0 0;
+      }
     }
 
-		h2 {
-			padding: 0;
-			margin: 0;
-			font-weight: 400;
-			@media (max-width: 815px) {
-				font-size: 1.1em;
-			}
-			@media (max-width: 490px) {
-				font-size: 1.0em;
-			}
-		}
-    .reading-time {
-      padding: 0.5rem 0 0;
+    h2 {
+      padding: 0;
+      margin: 0;
+      font-weight: 400;
+      @media (max-width: 815px) {
+        font-size: 1.1em;
+      }
+      @media (max-width: 490px) {
+        font-size: 1.0em;
+      }
     }
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 75%;
-    transform: translate(-50%, -50%);
-    padding: 2rem 0;
-		@media (max-width: 700px) {
-			padding: 1rem 0;
-		}
-		@media (max-width: 440px) {
-			padding: 0.5rem 0;
-		}
-    margin: 0 auto;
-    z-index: 99;
-    text-align: center;
-	}
+    .reading-time {
+      padding: 0.5rem 0;
+      @media (max-width: 420px) {
+        padding: 0.3rem 0;
+        font-size: 0.9em;
+      }
+    }
+  }
 `
 
 const BlogHeader = ({ header, logo, title, subtitle, time}) => {

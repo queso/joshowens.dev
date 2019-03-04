@@ -138,7 +138,7 @@ const Blog = ({
               </h2>
 
               <div className="reading-time">
-                {post.timeToRead} {post.timeToRead > 1 ? 'minutes' : 'minute' } read
+                {post.timeToRead} {post.timeToRead > 1 ? 'minutes' : 'minute' } to read
               </div>
 
               <p>{post.excerpt}</p>
