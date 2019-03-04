@@ -24,6 +24,21 @@ const FooterStyle = styled.div`
     color: cornflowerblue;
   }
 
+  a.github:hover {
+    color: limegreen;
+  }
+
+  a.youtube:hover {
+    color: crimson;
+  }
+
+  a.linkedin:hover {
+    color: lightskyblue;
+  }
+
+  a.instagram:hover {
+    color: fuchsia;
+  }
 `
 
 const Copyright = styled.div`
@@ -38,19 +53,19 @@ const Footer = () => {
   let year = new Date().getFullYear();
   return (
     <FooterStyle>
-      <Link to="https://twitter.com/joshowens">
+      <Link className="twitter" to="https://twitter.com/joshowens">
         <SocialTwitterCircular size={64} />
       </Link>
-      <Link to="https://github.com/queso">
+      <Link className="github" to="https://github.com/queso">
         <SocialGithubCircular size={64} />
       </Link>
-      <Link to="https://youtube.com/queso98">
+      <Link className="youtube" to="https://youtube.com/queso98">
         <SocialYoutubeCircular size={64} />
       </Link>
-      <Link to="https://www.linkedin.com/in/joshuaowens">
+      <Link className="linkedin" to="https://www.linkedin.com/in/joshuaowens">
         <SocialLinkedinCircular size={64} />
       </Link>
-      <Link to="https://www.instagram.com/joshjowens/">
+      <Link className="instagram" to="https://www.instagram.com/joshjowens/">
         <SocialInstagramCircular size={64} />
       </Link>
       <Copyright>All content copyright Josh Owens © {year} • All rights reserved.</Copyright>
