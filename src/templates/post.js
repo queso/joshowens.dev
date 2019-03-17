@@ -4,9 +4,9 @@ import MDXRenderer from 'gatsby-mdx/mdx-renderer';
 import styled from 'styled-components';
 
 import Layout from '../components/Layout';
-import Link from '../components/Link';
 import BlogHeader from '../components/BlogHeader';
 import AuthorInfo from '../components/AuthorInfo';
+import Tag from '../components/Tag';
 
 const PostStyle = styled.div`
   display: grid;
@@ -22,10 +22,10 @@ const PostStyle = styled.div`
   }
 
   time {
-    font-size: 0.9em;
+    font-size: 1em;
     text-align: center;
     display: block;
-    color: #666;
+    color: darkorange;
     padding-top: 2rem;
   }
 
@@ -54,8 +54,9 @@ const PostStyle = styled.div`
     }
 
     h2 {
-      font-size: 1.4em;
-      margin: 3rem 0 1.5rem 0;
+      font-size: 1.6em;
+      margin: 3rem 0 1.6rem 0;
+      color: #d66a00;
     }
 
     hr {
@@ -77,31 +78,14 @@ const PostStyle = styled.div`
   }
 `
 
-const TagStyle = styled.div`
-  a {
-    display: inline-block;
-    padding: 7px;
-    margin: 5px 10px 5px 0;
-    border: 1px solid #333;
-    border-radius: 3px;
-    color: white;
-    background-color: #333;
-  }
-
-  a:hover {
-    color: cornflowerblue;
-    background-color: white;
-  }
-`
-
 const TagList = ({ list = [] }) => (
-  <TagStyle>
+  <div>
     Topics:
     <br />
     {list.map(tag => (
-      <Link key={tag} to={`/tags/${tag}`}>{tag}</Link>
+      <Tag key={tag} tag={tag} />
     ))}
-  </TagStyle>
+  </div>
 );
 
 export default function Post({

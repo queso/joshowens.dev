@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import Layout from '../components/Layout';
 import Link from '../components/Link';
 import BlogHeader from '../components/BlogHeader';
+import Tag from '../components/Tag';
 
 const BlogStyle = styled.div`
   display: grid;
@@ -70,14 +71,6 @@ const MainStyle = styled.div`
       display:block;
       margin: 7px 0;
     }
-
-    .older {
-
-    }
-
-    .newer {
-
-    }
   }
 
 `
@@ -89,27 +82,12 @@ const SidebarStyle = styled.div`
   @media (min-width: 875px) {
     width: 80%;
   }
-
-  a {
-    display: inline-block;
-    padding: 7px;
-    margin: 5px 10px 5px 0;
-    border: 1px solid #333;
-    border-radius: 3px;
-    color: white;
-    background-color: #333;
-  }
-
-  a:hover {
-    color: cornflowerblue;
-    background-color: white;
-  }
 `
 
 const Tags = ({ tags }) => (
   <Fragment>
     {tags.map(tag => (
-        <Link key={tag} to={`/tags/${tag}`}>{tag}</Link>
+      <Tag key={tag} tag={tag} />
     ))}
   </Fragment>
 );
