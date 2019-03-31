@@ -47,19 +47,19 @@ const MainStyle = styled.div`
   }
 
   .post {
-    margin: 3rem 0;
+    margin: 2rem 0;
     border: 1px solid #aaa;
-    border-radius: 30px;
+    border-radius: 1rem;
     padding: 0;
     box-shadow: 5px 5px 15px 2px #efefef;
 
     .gatsby-image-wrapper {
-      border-top-left-radius: 29px;
-      border-top-right-radius: 29px;
+      border-top-left-radius: 0.9rem;
+      border-top-right-radius: 0.9rem;
     }
 
     .postInfo {
-      padding: 2rem;
+      padding: 1.5rem 1rem;
     }
 
     a.more-link {
