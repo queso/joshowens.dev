@@ -48,18 +48,18 @@ const MainStyle = styled.div`
 
   .post {
     margin: 2rem 0;
-    border: 1px solid #aaa;
+    border: 1px solid #dedede;
     border-radius: 1rem;
     padding: 0;
-    box-shadow: 5px 5px 15px 2px #efefef;
-
-    .gatsby-image-wrapper {
-      border-top-left-radius: 0.9rem;
-      border-top-right-radius: 0.9rem;
-    }
+    overflow: hidden;
+    box-shadow: 3px 3px 10px 1px #efefef;
 
     .postInfo {
       padding: 1.5rem 1rem;
+
+      @media (min-width: 815px) {
+        padding: 3rem 2rem;
+      }
     }
 
     a.more-link {
