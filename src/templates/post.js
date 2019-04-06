@@ -7,6 +7,7 @@ import Layout from '../components/Layout';
 import BlogHeader from '../components/BlogHeader';
 import AuthorInfo from '../components/AuthorInfo';
 import Tag from '../components/Tag';
+import Newsletter from '../components/Newsletter';
 
 const PostStyle = styled.div`
   display: grid;
@@ -105,6 +106,7 @@ export default function Post({
           <MDXRenderer >{mdx.code.body}</MDXRenderer>
           <time>Written on {mdx.frontmatter.date}</time>
           <hr />
+          <Newsletter />
           <AuthorInfo />
         </div>
 
