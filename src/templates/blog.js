@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import { graphql } from 'gatsby';
+import Img from 'gatsby-image';
 import styled from 'styled-components';
 
 import Layout from '../components/Layout';
@@ -46,7 +47,20 @@ const MainStyle = styled.div`
   }
 
   .post {
-    margin: 3rem 0;
+    margin: 2rem 0;
+    border: 1px solid #dedede;
+    border-radius: 1rem;
+    padding: 0;
+    overflow: hidden;
+    box-shadow: 3px 3px 10px 1px #efefef;
+
+    .postInfo {
+      padding: 1.5rem 1rem;
+
+      @media (min-width: 815px) {
+        padding: 3rem 2rem;
+      }
+    }
 
     a.more-link {
       color: cornflowerblue;
@@ -109,19 +123,27 @@ const Blog = ({
         <MainStyle>
           {posts.map(({ node: post }) => (
             <div className="post" key={post.id}>
-              <h2>
+              { post.frontmatter.banner ?
                 <Link to={post.frontmatter.slug}>
-                  {post.frontmatter.title}
+                  <Img fluid={post.frontmatter.banner.childImageSharp.fluid} />
                 </Link>
-              </h2>
+                : null
+              }
+              <div className="postInfo">
+                <h2>
+                  <Link to={post.frontmatter.slug}>
+                    {post.frontmatter.title}
+                  </Link>
+                </h2>
 
-              <div className="reading-time">
-                {post.timeToRead} {post.timeToRead > 1 ? 'minutes' : 'minute' } to read
+                <div className="reading-time">
+                  {post.timeToRead} {post.timeToRead > 1 ? 'minutes' : 'minute' } to read
+                </div>
+
+                <p>{post.excerpt}</p>
+
+                <Link className="more-link" to={post.frontmatter.slug}>Continue Reading</Link>
               </div>
-
-              <p>{post.excerpt}</p>
-
-              <Link className="more-link" to={post.frontmatter.slug}>Continue Reading</Link>
             </div>
           ))}
 
@@ -176,6 +198,13 @@ export const pageQuery = graphql`
           frontmatter {
             title
             date(formatString: "MMMM DD, YYYY")
+            banner {
+              childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
             slug
             tags
             keywords
