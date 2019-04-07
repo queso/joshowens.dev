@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { graphql } from 'gatsby';
 import MDXRenderer from 'gatsby-mdx/mdx-renderer';
 import styled from 'styled-components';
@@ -7,6 +7,7 @@ import Layout from '../components/Layout';
 import BlogHeader from '../components/BlogHeader';
 import AuthorInfo from '../components/AuthorInfo';
 import Tag from '../components/Tag';
+import Newsletter from '../components/Newsletter';
 
 const PostStyle = styled.div`
   display: grid;
@@ -59,11 +60,6 @@ const PostStyle = styled.div`
       color: #d66a00;
     }
 
-    hr {
-      border: 1px solid #ccc;
-      margin: 2rem auto;
-      width: 50%;
-    }
   }
 
   .postSidebar {
@@ -98,18 +94,27 @@ export default function Post({
         header={mdx.frontmatter.banner}
         title={mdx.frontmatter.title}
         time={mdx.timeToRead}
+        hideTitle={mdx.frontmatter.supportPage}
       />
 
       <PostStyle>
         <div className="postBody">
           <MDXRenderer >{mdx.code.body}</MDXRenderer>
-          <time>Written on {mdx.frontmatter.date}</time>
-          <hr />
-          <AuthorInfo />
+          { mdx.frontmatter.supportPage ? null :
+              (
+                <Fragment>
+                  <time>Written on {mdx.frontmatter.date}</time>
+                  <Newsletter />
+                  <AuthorInfo />
+                </Fragment>
+              )
+          }
         </div>
 
         <div className="postSidebar">
-          <TagList list={mdx.frontmatter.tags} />
+          { mdx.frontmatter.supportPage ? null :
+              <TagList list={mdx.frontmatter.tags} />
+          }
         </div>
       </PostStyle>
     </Layout>
@@ -135,6 +140,7 @@ export const pageQuery = graphql`
         slug
         tags
         keywords
+        supportPage
       }
       timeToRead
       code {

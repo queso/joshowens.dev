@@ -133,15 +133,19 @@ const HeaderStyle = styled.div`
   }
 `
 
-const BlogHeader = ({ header, logo, title, subtitle, time}) => {
+const BlogHeader = ({ header, logo, title, subtitle, time, hideTitle}) => {
   return (
     <HeaderStyle>
       <Image image={header} />
-      <div className="meta">
-        <Logo logo={logo} />
-        <h1>{title}</h1>
-        <Subtitle subtitle={subtitle} time={time} />
-      </div>
+      { hideTitle ? null :
+          (
+            <div className="meta">
+              <Logo logo={logo} />
+              <h1>{title}</h1>
+              <Subtitle subtitle={subtitle} time={time} />
+            </div>
+          )
+      }
     </HeaderStyle>
   )
 }
