@@ -60,11 +60,6 @@ const PostStyle = styled.div`
       color: #d66a00;
     }
 
-    hr {
-      border: 1px solid #ccc;
-      margin: 2rem auto;
-      width: 50%;
-    }
   }
 
   .postSidebar {
@@ -105,7 +100,6 @@ export default function Post({
         <div className="postBody">
           <MDXRenderer >{mdx.code.body}</MDXRenderer>
           <time>Written on {mdx.frontmatter.date}</time>
-          <hr />
           <Newsletter />
           <AuthorInfo />
         </div>
