@@ -128,6 +128,7 @@ exports.createPages = ({ actions, graphql }) =>
               title
               slug
               tags
+              supportPage
             }
             timeToRead
             code {
@@ -200,6 +201,12 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
       name: 'banner',
       node,
       banner: node.frontmatter.banner,
+    });
+
+    createNodeField({
+      name: 'supportPage',
+      node,
+      value: node.frontmatter.supportPage || false,
     });
 
     createNodeField({

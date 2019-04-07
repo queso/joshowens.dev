@@ -4,6 +4,7 @@ slug: "/about"
 date: "2014-08-22T14:09:00.302Z"
 featured: false
 draft: false
+supportPage: true
 tags: []
 description: "About Josh Owens: a developer, teacher, and an entrepreneur"
 keywords:
