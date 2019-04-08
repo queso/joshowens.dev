@@ -61,6 +61,12 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sitemap',
     'gatsby-plugin-netlify',
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-11472568-12"
+      }
+    },
 		{
 			resolve: `gatsby-plugin-feed`,
 			options: {
