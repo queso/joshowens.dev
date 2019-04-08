@@ -1,7 +1,7 @@
 module.exports = {
   pathPrefix: '/',
   siteMetadata: {
-    siteUrl: 'https://joshowens.me',
+    siteUrl: 'https://joshowens.dev',
     author: 'Josh Owens',
     title: 'My thougts on Unicorns, Rainbows, and Code',
     description: 'The blog of Josh Owens, developer, teacher, entrepreneur',
@@ -59,6 +59,7 @@ module.exports = {
     'gatsby-plugin-styled-components',
     'gatsby-plugin-catch-links',
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-sitemap',
 		'gatsby-plugin-netlify-headers',
 		{
 			resolve: `gatsby-plugin-feed`,

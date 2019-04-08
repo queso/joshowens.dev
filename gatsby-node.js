@@ -36,7 +36,7 @@ const createTagPages = (createPage, edges) => {
     createPaginatedPages(
       createPage,
       posts[tag],
-      `/tags/${tag}`,
+      `/tag/${tag}`,
       { tags, activetag: tag },
     );
   });
