@@ -148,6 +148,7 @@ exports.createPages = ({ actions, graphql }) =>
     createBlog(actions.createPage, edges);
     createPosts(actions.createPage, edges);
     createTagPages(actions.createPage, edges);
+    actions.createRedirect({fromPath: '/rss/rss.xml', toPath: '/rss.xml', isPermanent: true});
   });
 
 exports.onCreateWebpackConfig = ({ actions }) => {

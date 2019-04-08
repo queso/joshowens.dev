@@ -60,7 +60,7 @@ module.exports = {
     'gatsby-plugin-catch-links',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sitemap',
-		'gatsby-plugin-netlify-headers',
+    'gatsby-plugin-netlify',
 		{
 			resolve: `gatsby-plugin-feed`,
 			options: {
