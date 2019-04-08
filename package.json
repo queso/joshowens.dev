@@ -1,9 +1,14 @@
 {
-  "name": "gatsby-mdx-blog-starter-project",
-  "description": "Gatsby MDX Blog Starter Project",
+  "name": "joshowens.dev",
+  "description": "Gatsby MDX Blog",
   "version": "1.0.0",
-  "author": "Robin Wieruch <hello@rwieruch.com> (https://www.robinwieruch.de/)",
-  "repository": "https://github.com/rwieruch/gatsby-mdx-starter-project",
+  "author": "Josh Owens",
+  "repository": "https://github.com/queso/joshowens.dev",
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
   "dependencies": {
     "@mdx-js/mdx": "^0.16.5",
     "@mdx-js/tag": "^0.16.5",
