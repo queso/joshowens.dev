@@ -19,7 +19,7 @@ const TagStyle = styled.span`
 
 const Tag = ({tag}) => (
   <TagStyle>
-    <Link key={tag} to={`/tags/${tag}`}>{tag}</Link>
+    <Link key={tag} to={`/tag/${tag.replace(' ', '_')}`}>{tag}</Link>
   </TagStyle>
 )
 
