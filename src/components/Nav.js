@@ -18,7 +18,8 @@ const NavStyle = styled.div`
     display: inline;
   }
 
-  a, a:visited {
+  a,
+  a:visited {
     padding: 8px;
     color: white;
     text-decoration: none;
@@ -27,7 +28,7 @@ const NavStyle = styled.div`
   a:hover {
     color: cornflowerblue;
   }
-`
+`;
 
 const NAVIGATION = [
   { to: '/', label: 'Home' },
@@ -46,5 +47,5 @@ export default () => {
         ))}
       </ul>
     </NavStyle>
-  )
-}
+  );
+};

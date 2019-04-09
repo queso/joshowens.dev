@@ -9,7 +9,7 @@ const NoImageStyle = styled.div`
   @media (min-width: 850px) {
     height: 15rem;
   }
-`
+`;
 
 const LogoStyle = styled.div`
   max-width: 448px;
@@ -22,7 +22,7 @@ const LogoStyle = styled.div`
   @media (max-width: 491px) {
     padding: 0 0;
   }
-`
+`;
 
 const HeaderStyle = styled.div`
   grid-column-start: span 3;
@@ -31,17 +31,17 @@ const HeaderStyle = styled.div`
 
   :after {
     transition: opacity 2.5s ease;
-    transition-delay: .75s;
+    transition-delay: 0.75s;
     -moz-pointer-events: none;
     -webkit-pointer-events: none;
     -ms-pointer-events: none;
     pointer-events: none;
     background-color: #222;
-    content: "";
+    content: '';
     display: block;
     height: 100%;
     left: 0;
-    opacity: .5;
+    opacity: 0.5;
     position: absolute;
     top: 0;
     width: 100%;
@@ -71,7 +71,7 @@ const HeaderStyle = styled.div`
 
     &:before {
       position: absolute;
-      content: "";
+      content: '';
       height: 1px;
       width: 100px;
       background: #ffffff;
@@ -82,7 +82,7 @@ const HeaderStyle = styled.div`
 
     &:after {
       position: absolute;
-      content: "";
+      content: '';
       height: 1px;
       width: 100px;
       background: #ffffff;
@@ -98,7 +98,7 @@ const HeaderStyle = styled.div`
       padding: 0;
       margin: 0;
       @media (max-width: 815px) {
-        font-size: 2.0em;
+        font-size: 2em;
         padding: 0.5rem 0 0;
       }
       @media (max-width: 525px) {
@@ -120,7 +120,7 @@ const HeaderStyle = styled.div`
         font-size: 1.1em;
       }
       @media (max-width: 490px) {
-        font-size: 1.0em;
+        font-size: 1em;
       }
     }
     .reading-time {
@@ -131,55 +131,59 @@ const HeaderStyle = styled.div`
       }
     }
   }
-`
+`;
 
-const BlogHeader = ({ header, logo, title, subtitle, time, hideTitle}) => {
+const BlogHeader = ({
+  header,
+  logo,
+  title,
+  subtitle,
+  time,
+  hideTitle,
+}) => {
   return (
     <HeaderStyle>
       <Image image={header} />
-      { hideTitle ? null :
-          (
-            <div className="meta">
-              <Logo logo={logo} />
-              <h1>{title}</h1>
-              <Subtitle subtitle={subtitle} time={time} />
-            </div>
-          )
-      }
+      {hideTitle ? null : (
+        <div className="meta">
+          <Logo logo={logo} />
+          <h1>{title}</h1>
+          <Subtitle subtitle={subtitle} time={time} />
+        </div>
+      )}
     </HeaderStyle>
-  )
-}
+  );
+};
 
-const Image = ({image}) => {
+const Image = ({ image }) => {
   if (image) {
-    return <Img fluid={ image.childImageSharp.fluid } />
+    return <Img fluid={image.childImageSharp.fluid} />;
   } else {
-    return <NoImageStyle />
+    return <NoImageStyle />;
   }
-}
+};
 const Subtitle = ({ subtitle, time }) => {
   if (subtitle) {
-    return <h2>{subtitle}</h2>
+    return <h2>{subtitle}</h2>;
   } else {
     return (
       <div className="reading-time">
-        {time} {time > 1 ? 'minutes' : 'minute' } to read
+        {time} {time > 1 ? 'minutes' : 'minute'} to read
       </div>
-    )
+    );
   }
-}
+};
 
 const Logo = ({ logo }) => {
   if (logo) {
     return (
       <LogoStyle>
-        <Img fluid={ logo.childImageSharp.fluid } />
+        <Img fluid={logo.childImageSharp.fluid} />
       </LogoStyle>
-     )
-   } else {
+    );
+  } else {
     return null;
-   }
-
-}
+  }
+};
 
 export default BlogHeader;

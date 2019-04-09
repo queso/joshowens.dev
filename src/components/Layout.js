@@ -60,7 +60,6 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-
 export default ({ site, frontmatter = {}, children }) => {
   const {
     title,

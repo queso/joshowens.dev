@@ -88,14 +88,17 @@ const createPaginatedPages = (
   }, []);
 
   pages.forEach((page, index) => {
-    if (index > 0 && pathPrefix == "/") {
-      pathPrefix = "/page";
+    if (index > 0 && pathPrefix == '/') {
+      pathPrefix = '/page';
     }
-    const previousPagePath = pathPrefix == "/" ?`/page/${index + 1}`  : `${pathPrefix}/${index + 1}` ;
+    const previousPagePath =
+      pathPrefix == '/'
+        ? `/page/${index + 1}`
+        : `${pathPrefix}/${index + 1}`;
     let nextPagePath =
       index === 1 ? pathPrefix : `${pathPrefix}/${index - 1}`;
-    if (index === 1 && pathPrefix == "/page") {
-      nextPagePath = "/";
+    if (index === 1 && pathPrefix == '/page') {
+      nextPagePath = '/';
     }
 
     createPage({
@@ -148,8 +151,16 @@ exports.createPages = ({ actions, graphql }) =>
     createBlog(actions.createPage, edges);
     createPosts(actions.createPage, edges);
     createTagPages(actions.createPage, edges);
-    actions.createRedirect({fromPath: '/rss/rss.xml', toPath: '/rss.xml', isPermanent: true});
-    actions.createRedirect({fromPath: '/rss/', toPath: '/rss.xml', isPermanent: true});
+    actions.createRedirect({
+      fromPath: '/rss/rss.xml',
+      toPath: '/rss.xml',
+      isPermanent: true,
+    });
+    actions.createRedirect({
+      fromPath: '/rss/',
+      toPath: '/rss.xml',
+      isPermanent: true,
+    });
   });
 
 exports.onCreateWebpackConfig = ({ actions }) => {

@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import styled from 'styled-components';
 
 const NewsletterStyle = styled.div`
@@ -9,7 +9,7 @@ const NewsletterStyle = styled.div`
   padding: 2rem;
   overflow: hidden;
   box-shadow: 3px 3px 10px 1px #efefef;
-  
+
   input {
     padding: 0.5rem;
     width: 50%;
@@ -31,22 +31,39 @@ const NewsletterStyle = styled.div`
     margin: 1.5rem auto 0;
     text-align: center;
   }
-`
+`;
 
 const P = styled.p`
   font-size: 1.1em !important;
-`
+`;
 
-const Newsletter = () => ( 
+const Newsletter = () => (
   <NewsletterStyle>
     <h3>Digging this content?</h3>
-    <P className="tagline">Get more javascript, business, and podcast news delivered right to you!</P>
-    <form action="https://app.convertkit.com/forms/903375/subscriptions" method="POST">
-      <input type="text" aria-label="Your first name" placeholder="Your first name" name="fields[first_name]"/>
-      <input type="email" aria-label="Your email address" required="required" placeholder="Your email address" name="email_address"/>
+    <P className="tagline">
+      Get more javascript, business, and podcast news delivered right
+      to you!
+    </P>
+    <form
+      action="https://app.convertkit.com/forms/903375/subscriptions"
+      method="POST"
+    >
+      <input
+        type="text"
+        aria-label="Your first name"
+        placeholder="Your first name"
+        name="fields[first_name]"
+      />
+      <input
+        type="email"
+        aria-label="Your email address"
+        required="required"
+        placeholder="Your email address"
+        name="email_address"
+      />
       <button>Join now</button>
     </form>
   </NewsletterStyle>
-)
+);
 
 export default Newsletter;

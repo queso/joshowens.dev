@@ -15,12 +15,14 @@ const TagStyle = styled.span`
   a:hover {
     text-decoration: underline;
   }
-`
+`;
 
-const Tag = ({tag}) => (
+const Tag = ({ tag }) => (
   <TagStyle>
-    <Link key={tag} to={`/tag/${tag.replace(' ', '_')}`}>{tag}</Link>
+    <Link key={tag} to={`/tag/${tag.replace(' ', '_')}`}>
+      {tag}
+    </Link>
   </TagStyle>
-)
+);
 
 export default Tag;

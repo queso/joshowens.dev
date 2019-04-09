@@ -59,7 +59,6 @@ const PostStyle = styled.div`
       margin: 3rem 0 1.6rem 0;
       color: #d66a00;
     }
-
   }
 
   .postSidebar {
@@ -72,7 +71,7 @@ const PostStyle = styled.div`
       width: 80%;
     }
   }
-`
+`;
 
 const TagList = ({ list = [] }) => (
   <div>
@@ -99,22 +98,20 @@ export default function Post({
 
       <PostStyle>
         <div className="postBody">
-          <MDXRenderer >{mdx.code.body}</MDXRenderer>
-          { mdx.frontmatter.supportPage ? null :
-              (
-                <Fragment>
-                  <time>Written on {mdx.frontmatter.date}</time>
-                  <Newsletter />
-                  <AuthorInfo />
-                </Fragment>
-              )
-          }
+          <MDXRenderer>{mdx.code.body}</MDXRenderer>
+          {mdx.frontmatter.supportPage ? null : (
+            <Fragment>
+              <time>Written on {mdx.frontmatter.date}</time>
+              <Newsletter />
+              <AuthorInfo />
+            </Fragment>
+          )}
         </div>
 
         <div className="postSidebar">
-          { mdx.frontmatter.supportPage ? null :
-              <TagList list={mdx.frontmatter.tags} />
-          }
+          {mdx.frontmatter.supportPage ? null : (
+            <TagList list={mdx.frontmatter.tags} />
+          )}
         </div>
       </PostStyle>
     </Layout>

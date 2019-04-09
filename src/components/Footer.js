@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import {SocialTwitterCircular} from 'styled-icons/typicons/SocialTwitterCircular';
-import {SocialGithubCircular} from 'styled-icons/typicons/SocialGithubCircular';
-import {SocialYoutubeCircular} from 'styled-icons/typicons/SocialYoutubeCircular';
-import {SocialLinkedinCircular} from 'styled-icons/typicons/SocialLinkedinCircular';
-import {SocialInstagramCircular} from 'styled-icons/typicons/SocialInstagramCircular';
+import { SocialTwitterCircular } from 'styled-icons/typicons/SocialTwitterCircular';
+import { SocialGithubCircular } from 'styled-icons/typicons/SocialGithubCircular';
+import { SocialYoutubeCircular } from 'styled-icons/typicons/SocialYoutubeCircular';
+import { SocialLinkedinCircular } from 'styled-icons/typicons/SocialLinkedinCircular';
+import { SocialInstagramCircular } from 'styled-icons/typicons/SocialInstagramCircular';
 
 import Link from './Link';
 
@@ -16,7 +16,8 @@ const FooterStyle = styled.div`
   text-align: center;
   padding: 1rem 0;
 
-  a, a:visited {
+  a,
+  a:visited {
     color: white;
   }
 
@@ -39,7 +40,7 @@ const FooterStyle = styled.div`
   a.instagram:hover {
     color: fuchsia;
   }
-`
+`;
 
 const Copyright = styled.div`
   display: block;
@@ -47,7 +48,7 @@ const Copyright = styled.div`
   font-weight: 400;
   margin-top: 0.5rem;
   padding-bottom: 0.5rem;
-`
+`;
 
 const Footer = () => {
   let year = new Date().getFullYear();
@@ -62,14 +63,23 @@ const Footer = () => {
       <Link className="youtube" to="https://youtube.com/queso98">
         <SocialYoutubeCircular size={64} />
       </Link>
-      <Link className="linkedin" to="https://www.linkedin.com/in/joshuaowens">
+      <Link
+        className="linkedin"
+        to="https://www.linkedin.com/in/joshuaowens"
+      >
         <SocialLinkedinCircular size={64} />
       </Link>
-      <Link className="instagram" to="https://www.instagram.com/joshjowens/">
+      <Link
+        className="instagram"
+        to="https://www.instagram.com/joshjowens/"
+      >
         <SocialInstagramCircular size={64} />
       </Link>
-      <Copyright>All content copyright Josh Owens © {year} • All rights reserved.</Copyright>
+      <Copyright>
+        All content copyright Josh Owens © {year} • All rights
+        reserved.
+      </Copyright>
     </FooterStyle>
-  )
-}
+  );
+};
 export default Footer;

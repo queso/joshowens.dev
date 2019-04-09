@@ -4,13 +4,14 @@ module.exports = {
     siteUrl: 'https://joshowens.dev',
     author: 'Josh Owens',
     title: 'My thougts on Unicorns, Rainbows, and Code',
-    description: 'The blog of Josh Owens, developer, teacher, entrepreneur',
+    description:
+      'The blog of Josh Owens, developer, teacher, entrepreneur',
     keywords: [
       'Software Engineer',
       'Web Developer',
       'Consultant',
       'Freelancer',
-      'Teacher'
+      'Teacher',
     ],
   },
   plugins: [
@@ -43,17 +44,17 @@ module.exports = {
           },
         ],
       },
-		},
-		{
-			resolve: `gatsby-plugin-google-tagmanager`,
-			options: {
-				id: "GTM-5JHQWLK",
+    },
+    {
+      resolve: `gatsby-plugin-google-tagmanager`,
+      options: {
+        id: 'GTM-5JHQWLK',
 
-				// Include GTM in development.
-				// Defaults to false meaning GTM will only be loaded in production.
-				includeInDevelopment: false,
-			}
-		},
+        // Include GTM in development.
+        // Defaults to false meaning GTM will only be loaded in production.
+        includeInDevelopment: false,
+      },
+    },
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     'gatsby-plugin-styled-components',
@@ -64,13 +65,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: "UA-11472568-12"
-      }
+        trackingId: 'UA-11472568-12',
+      },
     },
-		{
-			resolve: `gatsby-plugin-feed`,
-			options: {
-				query: `
+    {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        query: `
 					{
 						site {
 							siteMetadata {
@@ -82,20 +83,24 @@ module.exports = {
 						}
 					}
 				`,
-				feeds: [
-					{
-						serialize: ({ query: { site, allMdx } }) => {
-							return allMdx.edges.map(edge => {
-								return Object.assign({}, edge.node.frontmatter, {
-									description: edge.node.excerpt,
-									date: edge.node.frontmatter.date,
-									url: site.siteMetadata.siteUrl + edge.node.fields.slug,
-									guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
-									custom_elements: [{ "content:encoded": edge.node.html }],
-								})
-							})
-						},
-						query: `
+        feeds: [
+          {
+            serialize: ({ query: { site, allMdx } }) => {
+              return allMdx.edges.map(edge => {
+                return Object.assign({}, edge.node.frontmatter, {
+                  description: edge.node.excerpt,
+                  date: edge.node.frontmatter.date,
+                  url:
+                    site.siteMetadata.siteUrl + edge.node.fields.slug,
+                  guid:
+                    site.siteMetadata.siteUrl + edge.node.fields.slug,
+                  custom_elements: [
+                    { 'content:encoded': edge.node.html },
+                  ],
+                });
+              });
+            },
+            query: `
 							{
 								allMdx(
 									limit: 1000,
@@ -116,19 +121,19 @@ module.exports = {
 								}
 							}
 						`,
-						output: "/rss.xml",
-						title: "Gatsby RSS Feed",
-					},
-				],
-			},
-		},
+            output: '/rss.xml',
+            title: 'Gatsby RSS Feed',
+          },
+        ],
+      },
+    },
     {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         google: {
-          families: ['Roboto:400,900', 'Roboto Slab:300,400']
-        }
-      }
+          families: ['Roboto:400,900', 'Roboto Slab:300,400'],
+        },
+      },
     },
     {
       resolve: 'gatsby-source-filesystem',

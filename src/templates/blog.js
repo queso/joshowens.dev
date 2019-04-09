@@ -16,8 +16,7 @@ const BlogStyle = styled.div`
     display: block;
     margin: 0 2.2rem;
   }
-
-`
+`;
 const MainStyle = styled.div`
   grid-column-start: 2;
   max-width: 75ch;
@@ -87,7 +86,7 @@ const MainStyle = styled.div`
     }
   }
 
-`
+`;
 
 const SidebarStyle = styled.div`
   grid-column-start: 3;
@@ -96,7 +95,7 @@ const SidebarStyle = styled.div`
   @media (min-width: 875px) {
     width: 80%;
   }
-`
+`;
 
 const Tags = ({ tags }) => (
   <Fragment>
@@ -118,17 +117,25 @@ const Blog = ({
 
   return (
     <Layout site={site}>
-      <BlogHeader header={header} logo={logo} title={'Josh Owens'} subtitle={'developer, teacher, entrepreneur'} />
+      <BlogHeader
+        header={header}
+        logo={logo}
+        title={'Josh Owens'}
+        subtitle={'developer, teacher, entrepreneur'}
+      />
       <BlogStyle>
         <MainStyle>
           {posts.map(({ node: post }) => (
             <div className="post" key={post.id}>
-              { post.frontmatter.banner ?
+              {post.frontmatter.banner ? (
                 <Link to={post.frontmatter.slug}>
-                  <Img fluid={post.frontmatter.banner.childImageSharp.fluid} />
+                  <Img
+                    fluid={
+                      post.frontmatter.banner.childImageSharp.fluid
+                    }
+                  />
                 </Link>
-                : null
-              }
+              ) : null}
               <div className="postInfo">
                 <h2>
                   <Link to={post.frontmatter.slug}>
@@ -137,12 +144,18 @@ const Blog = ({
                 </h2>
 
                 <div className="reading-time">
-                  {post.timeToRead} {post.timeToRead > 1 ? 'minutes' : 'minute' } to read
+                  {post.timeToRead}{' '}
+                  {post.timeToRead > 1 ? 'minutes' : 'minute'} to read
                 </div>
 
                 <p>{post.excerpt}</p>
 
-                <Link className="more-link" to={post.frontmatter.slug}>Continue Reading</Link>
+                <Link
+                  className="more-link"
+                  to={post.frontmatter.slug}
+                >
+                  Continue Reading
+                </Link>
               </div>
             </div>
           ))}
@@ -151,17 +164,20 @@ const Blog = ({
 
           <div className="more-posts">
             {nextPagePath && (
-              <Link className="newer" to={nextPagePath}>&larr; Newer Posts</Link>
+              <Link className="newer" to={nextPagePath}>
+                &larr; Newer Posts
+              </Link>
             )}
 
             {previousPagePath && (
-              <Link className="older" to={previousPagePath}>Older Posts &rarr;</Link>
+              <Link className="older" to={previousPagePath}>
+                Older Posts &rarr;
+              </Link>
             )}
           </div>
         </MainStyle>
         <SidebarStyle>
-          All topics on the blog:{' '}
-          <Tags tags={tags} />
+          All topics on the blog: <Tags tags={tags} />
         </SidebarStyle>
       </BlogStyle>
     </Layout>
@@ -175,14 +191,14 @@ export const pageQuery = graphql`
     site {
       ...site
     }
-    header: file(relativePath: {glob: "blog-header.jpg"}) {
+    header: file(relativePath: { glob: "blog-header.jpg" }) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid
         }
       }
     }
-    logo: file(relativePath: {glob: "logo.png"}) {
+    logo: file(relativePath: { glob: "logo.png" }) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid

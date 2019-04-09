@@ -8,31 +8,38 @@ const AuthorStyle = styled.div`
   margin: 0 auto;
   max-width: 75ch;
   color: #777;
-`
+`;
 
 const AuthorInfo = () => {
   return (
     <StaticQuery
       query={graphql`
-          query {
-            avatar: file(relativePath: {glob: "joshowens-avatar.jpg"}) {
-              childImageSharp {
-                fixed(height: 100) {
-                  ...GatsbyImageSharpFixed
-                }
+        query {
+          avatar: file(
+            relativePath: { glob: "joshowens-avatar.jpg" }
+          ) {
+            childImageSharp {
+              fixed(height: 100) {
+                ...GatsbyImageSharpFixed
               }
             }
           }
+        }
       `}
-      render={ data => (
+      render={data => (
         <AuthorStyle>
           <Img fixed={data.avatar.childImageSharp.fixed} />
           <h3>Josh Owens</h3>
-          <p>It all started with an Atari 800XL, but now Josh is a ruby and javascript developer with 10 years of professional experience. His current love is React.js, which he works with daily.</p>
+          <p>
+            It all started with an Atari 800XL, but now Josh is a ruby
+            and javascript developer with 10 years of professional
+            experience. His current love is React.js, which he works
+            with daily.
+          </p>
         </AuthorStyle>
       )}
     />
-  )
-}
+  );
+};
 
 export default AuthorInfo;
