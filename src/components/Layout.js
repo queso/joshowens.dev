@@ -70,10 +70,12 @@ export default ({ site, frontmatter = {}, children }) => {
   const {
     keywords: frontmatterKeywords,
     description: frontmatterDescription,
+    banner: frontmatterBanner,
   } = frontmatter;
 
   const keywords = (frontmatterKeywords || siteKeywords).join(', ');
   const description = frontmatterDescription || siteDescription;
+  const image = frontmatterBanner || '';
 
   return (
     <Fragment>
@@ -85,6 +87,12 @@ export default ({ site, frontmatter = {}, children }) => {
           { name: 'keywords', content: keywords },
         ]}
       >
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:creator" content="@joshowens" />
+        <meta property="og:url" content={site.siteMetadata.siteUrl} />
+        <meta property="og:title" content="A Twitter for My Sister" />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={image} />
         <html lang="en" />
       </Helmet>
 
