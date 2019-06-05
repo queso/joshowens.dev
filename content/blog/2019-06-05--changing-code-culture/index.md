@@ -16,13 +16,20 @@ What is 'code culture'? I view it as the practices we do around and in our code,
 
 ## Cross-team code reviews
 
-Cross-team code reviews were a fun experiment we tried for 5 or 6 meetings. The meeting revolved around the idea of having people outside your team watching as you explain code related to a feature. We would pick a developer to 'present' the code and walk us through the code on a big screen while explaining it. We would have 3-6 other devs in the room from other teams. The other devs would ask questions, give opinions, and offer suggestions on how their team might change or improve the code.
+Cross-team code reviews were a fun experiment we tried for 5 or 6 meetings. The meeting revolved around the idea of having people outside your team watching as you explain code related to a feature.
+
+- Pick a developer to 'present' the code
+- The presenter pulls up the code on a big screen
+- The presenter talks through the code and flips between files
+- Have 3-6 other devs in the room from other teams.
+- Other devs would ask questions
+- Other devs give opinions and offer suggestions
 
 It turns out that this is a great way to promote learning and inter-team growth within a larger organization. Several teams walked away from these cross team code reviews with significant bits to refactor. Refactors like changing how API data is fetched, or writing React components without 'prop drilling'. These meetings also led to cross team pairing. This pair focused on defining code boundaries better between the two teams. It also led to consistent API data shapes and caching the data.
 
-Positive Outcomes: Teams started working across code bases instead of within them, and we started to establish standards across many teams instead of within one team.
+**Positive Outcomes**: Teams started working across code bases instead of within them, and we started to establish standards across many teams instead of within one team.
 
-Things to watch out for: We ended up getting thrown off track due to unconstructive criticism. If you are interested in cross-team code review, I recommend establishing guidelines on constructive criticism. Being constructive can ensure people leave the meeting without feeling attacked.
+**Things to watch out for**: We ended up getting thrown off track due to unconstructive criticism. If you are interested in cross-team code review, I recommend establishing guidelines on constructive criticism. Being constructive can ensure people leave the meeting without feeling attacked.
 
 ## Code Review Club
 
@@ -34,19 +41,27 @@ When we met, I brought up the solutions on the big screen; I made each person wa
 
 At the end of this particular cycle of Code Review Club, we had grown from 4 people to 30+ people from many teams. Discussions around solutions shown on screen were illuminating on how to write great Kotlin code. People also started sharing about how they were writing their services in Kotlin, and other teams got interested in doing that. The organization started organically, moving to Kotlin for backend services.
 
-Positive outcomes: People got better at reading code, explaining the code, and the organization started moving towards Kotlin.
+**Positive outcomes**: People got better at reading code, explaining the code, and the organization started moving towards Kotlin.
 
-Things to watch out for: Check with a manager and make sure they are ok with this type of meeting. The management may not want to push switching technology.
+**Things to watch out for**: Check with a manager and make sure they are ok with this type of meeting. The management may not want to push switching technology.
 
 ## Weekly team huddles
 
 If you want to push a team to function well, give them time and space to meet weekly. The team can talk about what is going on in the code base. I move around from team to team every 6 months, so I've seen this particular type of meeting both fail and succeed.
 
-The point of this activity is to gather a team of devs and give them time to talk. Time to discuss standards they want to set up, practices they want to follow and do actual whole team code reviews. I've used this meeting to talk about things like; how to rebase with git, how to do a constructive code review for a pull request, and we've conducted live code reviews as a whole team. We also use this time to talk about tech debt and how we want to approach removing that tech debt. This meeting is where ideas are planted, and they continue to grow in the developers' minds as they leave the room and go about work for the rest of the week. On one team, these meetings led to us create a new PR approval process, a new npm release process, and a11y testing in the pipeline.
+The point of this activity is to gather a team of devs and give them time to talk. Time to discuss standards they want to set up, practices they want to follow and do actual whole team code reviews. I've used this meeting to talk about things like;
 
-Positive outcomes: Teams have time to discover and remove tech debt. Code quality went up in ways that we measured in the pipeline.
+- How to rebase with git
+- How to do a constructive code review for a pull request
+- Conducted live code reviews as a whole team
+- Discuss tech debt
+- Create 'tech tasks' that devs want in the backlog
 
-Things to watch out for: Make sure you establish ground rules on not talking over people. We also had a rule that you needed to come prepared for things you want to bring up.
+This meeting is where ideas are planted, and they continue to grow in the developers' minds as they leave the room and go about work for the rest of the week. On one team, these meetings led to us create a new PR approval process, a new npm release process, and a11y testing in the pipeline.
+
+**Positive outcomes**: Teams have time to discover and remove tech debt. Code quality went up in ways that we measured in the pipeline.
+
+**Things to watch out for**: Make sure you establish ground rules on not talking over people. We also had a rule that you needed to come prepared for things you want to bring up.
 
 ## TLDR
 
