@@ -9,7 +9,7 @@ tags:
 description: 'Sometimes you want to improve your working environment, try these ideas to get started...'
 keywords:
   - code culture
-banner: ''
+banner: "./images/Code-Review-Club.jpg"
 ---
 
 What is 'code culture'? I view it as the practices we do around and in our code, the established standards that a team has agreed to work within. I've gleaned some wisdom after being on many development teams at startups, dev shops, and enterprises. More specifically, I've spent the last 3 years of my life at a Fortune 50 company, and I want to share some of the ways I've found to change code culture for the better.
