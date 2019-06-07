@@ -62,7 +62,7 @@ const GlobalStyle = createGlobalStyle`
 
 export default ({ site, frontmatter = {}, children }) => {
   const {
-    title,
+    title: siteTitle,
     description: siteDescription,
     keywords: siteKeywords,
   } = site.siteMetadata;
@@ -70,10 +70,12 @@ export default ({ site, frontmatter = {}, children }) => {
   const {
     keywords: frontmatterKeywords,
     description: frontmatterDescription,
+    title: frontmatterTitle
   } = frontmatter;
 
   const keywords = (frontmatterKeywords || siteKeywords).join(', ');
   const description = frontmatterDescription || siteDescription;
+  const title = frontmatterTitle || siteTitle;
 
   return (
     <Fragment>
