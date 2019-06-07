@@ -3,7 +3,7 @@ module.exports = {
   siteMetadata: {
     siteUrl: 'https://joshowens.dev',
     author: 'Josh Owens',
-    title: 'My thougts on Unicorns, Rainbows, and Code',
+    title: 'My thoughts on Unicorns, Rainbows, and Code',
     description:
       'The blog of Josh Owens, developer, teacher, entrepreneur',
     keywords: [
