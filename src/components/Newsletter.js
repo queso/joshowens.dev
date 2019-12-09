@@ -45,21 +45,24 @@ const Newsletter = () => (
       to you!
     </P>
     <form
-      action="https://app.convertkit.com/forms/903375/subscriptions"
-      method="POST"
+      action="https://www.getdrip.com/forms/3182289/submissions"
+      method="post"
+      data-drip-embedded-form="3182289"
     >
       <input
         type="text"
-        aria-label="Your first name"
-        placeholder="Your first name"
-        name="fields[first_name]"
+        id="drip-full-name"
+        aria-label="Your name"
+        placeholder="Your name"
+        name="fields[full_name]"
       />
       <input
         type="email"
         aria-label="Your email address"
         required="required"
         placeholder="Your email address"
-        name="email_address"
+        name="fields[email]"
+        id="drip_email"
       />
       <button>Join now</button>
     </form>
